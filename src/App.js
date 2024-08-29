@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import Banner from './components/Banner/Banner';
-import CampoTexto from './components/CampoTexto/CampoTexto';
+import Formulario from './components/Formulario/Formulario';
 
 function App() {
   return (
     <div className="App">
       <Banner />
-      <CampoTexto />
+      <Formulario/>
       <header className="App-header">
       </header>
     </div>
