@@ -1,4 +1,5 @@
 import Banner from './components/Banner/Banner';
+import Footer from './components/Footer/Footer';
 import Formulario from './components/Formulario/Formulario';
 import Time from './components/Time/Time';
 import { useState } from 'react';
@@ -19,11 +20,11 @@ function App() {
     {
       nome: 'Data-Sience',
       corPrimaria: '#A6D157',
-      corSecundaria: '#FOF8E2'
+      corSecundaria: '#E9FFE3'
     },
     {
       nome: 'Devops',
-      corPrimaria: '#EO6B69',
+      corPrimaria: '#F16165',
       corSecundaria: '#FDE7E8'
     },
     {
@@ -54,7 +55,14 @@ function App() {
     <div className="App">
       <Banner />
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => novoColaboradorCadastrado(colaborador)}/>
-      {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
+      {times.map(time => <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria}
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      />)}
+      <Footer />
     </div>
   );
 }
